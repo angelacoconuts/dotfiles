@@ -225,3 +225,13 @@ fi
 
 ## Define any user-specific variables you want here.
 source ~/.bashrc_custom
+
+## ------------------------------
+## -- 4) System parameters  --
+## ------------------------------
+JAVA_HOME=/usr/local/java/jdk1.7.0_51
+PATH=$PATH:$JAVA_HOME/bin
+JRE_HOME=/usr/local/java/jre1.7.0_51
+PATH=$PATH:$JRE_HOME/bin
+
+alias cdgit='cd ~/Documents/dev/git'
