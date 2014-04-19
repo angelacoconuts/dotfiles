@@ -235,3 +235,8 @@ JRE_HOME=/usr/local/java/jre1.7.0_51
 PATH=$PATH:$JRE_HOME/bin
 
 alias cdgit='cd ~/Documents/dev/git'
+alias eclipse='~/Documents/program/eclipse/eclipse&'
+alias spotlight='java -Xmx6144m -jar ~/Documents/program/spotlight/dbpedia-spotlight-0.7.jar ~/Documents/program/spotlight/en_2+3 http://localhost:2222/rest'
+alias psql_aws_enhype='psql --host=enhype.cojtnovxyoln.us-west-2.rds.amazonaws.com --port=5432 --username=enhype --password --dbname=enhype'
+
+alias rmtemp='find . -type f -name "*~" -delete'
