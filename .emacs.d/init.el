@@ -72,7 +72,58 @@
 (load "js-config.el")
 (add-to-list 'load-path "~/.emacs.d/jade-mode") ;; github.com/brianc/jade-mode
 (require 'sws-mode)
-(require 'jade-mode)    
+(require 'jade-mode)
 (add-to-list 'auto-mode-alist '("\\.styl$" . sws-mode))
 (add-to-list 'auto-mode-alist '("\\.jade$" . jade-mode))
 
+
+(if (not (member '("-*-courier new-normal-r-*-*-13-*-*-*-c-*-fontset-chinese"
+   . "fontset-chinese") fontset-alias-alist))
+    (progn
+      (create-fontset-from-fontset-spec
+       "-*-courier new-normal-r-*-*-13-*-*-*-c-*-fontset-chinese,
+      chinese-gb2312:-*-MS Song-normal-r-*-*-16-*-*-*-c-*-gb2312*-*,
+      chinese-big5-1:-*-MingLiU-normal-r-*-*-16-*-*-*-c-*-big5*-*,
+      chinese-big5-2:-*-MingLiU-normal-r-*-*-16-*-*-*-c-*-big5*-*" t)
+
+      (setq default-frame-alist
+            (append
+             '((font . "fontset-chinese"))
+             default-frame-alist))
+      )
+  )
+
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa-stable" . "http://stable.melpa.org/packages/") t)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.org/packages/") t)
+(add-to-list 'package-archives
+             '("marmalade" . "http://marmalade-repo.org/packages/"))
+(when (< emacs-major-version 24)
+  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
+
+(package-initialize)
+
+(add-to-list 'load-path "/home/angelacoconuts/.emacs.d/elpa/neotree-20150206.1900/neotree.el")
+(require 'neotree)
+(global-set-key [f8] 'neotree-toggle)
+
+(add-hook 'clojure-mode-hook 'turn-on-eldoc-mode)
+(setq nrepl-popup-stacktraces nil)
+(add-to-list 'same-window-buffer-names "<em>nrepl</em>")
+
+;; General Auto-Complete
+(require 'auto-complete-config)
+(setq ac-delay 0.0)
+(setq ac-quick-help-delay 0.5)
+(ac-config-default)
+(put 'scroll-left 'disabled nil)
+
+;; Delete trailing blanking before saving
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+;; Binds return key with auto-indent C-j
+(defun set-newline-and-indent ()
+  (local-set-key (kbd "RET") 'newline-and-indent))
+(add-hook 'python-mode-hook 'set-newline-and-indent)
+(add-hook 'lisp-mode-hook 'set-newline-and-indent)

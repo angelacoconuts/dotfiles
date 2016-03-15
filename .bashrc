@@ -9,7 +9,7 @@
 #    3) .bash_profile imports .bashrc, but not vice versa.
 #    4) .bashrc imports .bashrc_custom, which can be used to override
 #        variables specified here.
-#           
+#
 # When using GNU screen:
 #
 #    1) .bash_profile is loaded the first time you login, and should be used
@@ -192,7 +192,7 @@ alias treeacl='tree -A -C -L 2'
 alias em='emacs -nw'     # No X11 windows
 alias eqq='emacs -nw -Q' # No config and no X11
 export EDITOR='emacs -nw'
-export VISUAL='emacs -nw' 
+export VISUAL='emacs -nw'
 
 # 2.4) grep options
 export GREP_OPTIONS='--color=auto'
@@ -224,7 +224,7 @@ fi
 ## ------------------------------
 
 ## Define any user-specific variables you want here.
-source ~/.bashrc_custom
+#source ~/.bashrc_custom
 
 ## ------------------------------
 ## -- 4) System parameters  --
@@ -234,9 +234,38 @@ PATH=$PATH:$JAVA_HOME/bin
 JRE_HOME=/usr/local/java/jre1.7.0_51
 PATH=$PATH:$JRE_HOME/bin
 
+PATH=$PATH:~/Documents/program/
+PATH=$PATH:~/Documents/program/dthinker/code/
+PATH=$PATH:~/forest/d-thinker/tc2/release/bin/
+PATH=$PATH:/usr/local/texlive/2015/bin/x86_64-linux/
+
+NEO4J_HOME=~/Documents/program/neo4j-community-2.3.2/
+PATH=$NEO4J_HOME/bin:$PATH
+
+# cod
+#export GROUND_DIR=$HOME/forest
+
+# cc0 and ld0
+#export CC0_INC=$GROUND_DIR/d-thinker/libi0/libi0
+#export LD0_LIB=$GROUND_DIR/d-thinker/libi0/libi0
+#. ~/think/conf/set-env.sh
+#export PATH=~/think/:~/think/bin/:$PATH
+
+export PATH=~/Documents/program/MATLAB/R2014b/bin:$PATH
+
+export AWS_ACCESS_KEY=AKIAI2S6OFPEEECOMY2A
+export AWS_SECRET_KEY=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
+
+export SPARK_HOME=~/Documents/program/spark
+export PATH=$SPARK_HOME/bin:$PATH
+
 alias cdgit='cd ~/Documents/dev/git'
 alias eclipse='~/Documents/program/eclipse/eclipse&'
 alias spotlight='java -Xmx6144m -jar ~/Documents/program/spotlight/dbpedia-spotlight-0.7.jar ~/Documents/program/spotlight/en_2+3 http://localhost:2222/rest'
 alias psql_aws_enhype='psql --host=enhype.cojtnovxyoln.us-west-2.rds.amazonaws.com --port=5432 --username=enhype --password --dbname=enhype'
 
 alias rmtemp='find . -type f -name "*~" -delete'
+
+alias commands='em ~/Documents/dev/common-commands'
+
+alias fanqiang='sudo openvpn --config ~/Documents/dev/vpn/desktop.ovpn'
