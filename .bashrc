@@ -253,9 +253,6 @@ PATH=$NEO4J_HOME/bin:$PATH
 
 export PATH=~/Documents/program/MATLAB/R2014b/bin:$PATH
 
-export AWS_ACCESS_KEY=AKIAI2S6OFPEEECOMY2A
-export AWS_SECRET_KEY=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
-
 export SPARK_HOME=~/Documents/program/spark
 export PATH=$SPARK_HOME/bin:$PATH
 
